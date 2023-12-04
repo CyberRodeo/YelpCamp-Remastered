@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Great Campgrounds for Holidays</title>
+    <link rel="stylesheet" href="stylesheets/indexRM.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">    
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="/stylesheets/responsive.css">
+    <link rel="icon" href="https://a0.muscache.com/airbnb/static/logotype_favicon-21cc8e6c6a2cca43f061d2dcabdf6e58.ico">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href= "https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>  
+    <div id="preloader"></div>
+    <div class="main">
+        <nav class="mainavbar">
+            <div class="bruhdiv2">
+                <div class="logodiv">
+                    <i class="fa-solid fa-fire-flame-curved fa-3x flame"></i>
+                </div>
+                <div class="inpcontainer">
+                    <form action="/campgrounds" method="get" id="searchform">
+                        <div class="ico_inp">
+                            <input class="inp inp-top" name="search"  type="text" autocomplete="off" placeholder="Search Campground - Name or Location" required>
+                            <!-- <a href="/campgrounds" class="speciolink" ><i class="fa fa-search searchico"></i></a>    -->
+                            <button type="submit" class="searchbetn"><i class="fa fa-search searchico se-ico-whi"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="bruhdiv1">
+                <div class="bcah">
+                    <% if(!currentUser){ %>
+                        <a class="betn betn-create"  href="/campgrounds/new">Become a Host</a>
+                    <% } else { %>  
+                        <a class="betn betn-create"  href="/campgrounds/new">Host Campground</a>
+                    <% } %> 
+                </div> 
+                <% if(!currentUser) { %>
+                <% } else { %>
+                    <img class="logo" style="margin-right: 5px;" src="<%= currentUser.profpic %>" alt="">
+                <% } %>
+                <div class="opt" onclick="show()">
+                    <button class="betn-opt dropbtn" onclick="dropdown()">
+                        <div class="menu01"><i class="fa-solid fa-bars bars"></i></div>
+                        <div><i class="fa fa-user-circle user"></i></div>
+                    </button>
+                    <div id="dropdown"  class="dropdown-content">
+                        <a href="/" class="nub1" >Home</a>
+                        <a href="/campgrounds" class="op">Campgrounds</a>
+                        <a href="#" class="op" onclick="myFunction()">Rose</a>
+                        <% if(!currentUser){ %>
+                            <a href="/register" class="op" >Sign Up</a>
+                            <a href="/login" class="nub">Login</a>
+                        <% } else { %>    
+                            <a href="#" class="op" ><%= currentUser.username %>'s Profile</a>
+                            <a href="/logout" class="nub">Logout</a>
+                        <% } %>
+      
+                    </div>
+                </div>
+        </nav>
+        <div style="width: 100%; display: flex; justify-content: center;">
+            <% if(success && success.length > 0){ %>
+                <div class="alert">
+                    <div class="mainalert">
+                        <%= success %>
+                    </div>
+                </div>
+            <% } %>
+            <% if(error && error.length > 0){ %>
+                <div class="alert1">
+                    <div class="mainalert">
+                        <%= error %>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+        
+        <div class="container cont-top" style="display: flex; flex-wrap: wrap; justify-content: center;">
+            <% campgrounds.forEach(function(camps){%>
+                 <div class="col-lg-3 card mt-4"  style="margin: 0 15px;"> 
+                    <div class="cus">
+                        <img class="card-img-top" style="background-position: center;" src="<%-camps.img%>">
+                            <div class="card-body">
+                                <div class="title" style="margin-top: 2px;">
+                                    <small class="card-title" style="font-size: 15px; font-weight: bold;"><%-camps.name%></small>
+                                    <small><%= camps.rating%> 4.5 <i class="fa-solid fa-star"></i></small>
+                                </div>
+                                <small><%= camps.description.substring(0, 45)%>...</small>
+                                <h5 style="margin-top: 4px; font-size: 14px;">$<%= camps.price%></h5>
+                                <button class="view"><a class="abtn" href="/campgrounds/<%= camps.id %>">View Camp</a></button>
+                            </div>
+                    </div>
+                </div>
+                <% }); %>        
+            </div>
+        </div>
+        <div id="snackbar">
+            What? Why are you clicking me? 🙄
+        </div>
+        <div id="opt-bottom">
+            <div class="opt-crate">
+                <button class="btn-bottom">
+                    <a href="/" class="abtn-bottom"><i class="fa-solid fa-house"></i></a>
+                </button>
+                <h5 class="bottom-txt">
+                    Home
+                </h5>
+            </div>            
+            <div class="opt-crate">
+                <button class="btn-bottom">
+                    <a href="/campgrounds/new" class="abtn-bottom"><i class="fa-solid fa-arrow-up"></i></a>
+                </button>
+                <h5 class="bottom-txt">
+                    Host
+                </h5>
+            </div>
+           <div class="opt-crate">
+            <% if(!currentUser) { %>
+                <button class="btn-bottom">
+                    <a href="/login" class="abtn-bottom"><i class="fa-solid fa-user"></i></a>
+                </button>
+                <h5 class="bottom-txt">
+                    Login
+                </h5>
+                <% } else { %>
+                    <img class="logo logo-1" style="margin-right: 5px;" src="<%= currentUser.profpic %>" alt="">
+                <% } %>                                          
+           </div>
+        </div>        
+    <script>
+        var loader = document.getElementById("preloader");
+
+        window.addEventListener("load", function(){
+            loader.style.display = 'none';
+        });     
+        
+        function myFunction() {
+             var x = document.getElementById("snackbar");
+             x.className = "show";
+             setTimeout(function(){ x.className = x.className.replace("show", ""); }, 10000);
+        }
+        
+
+        var dropdown = document.getElementById("dropdown");
+
+        function show(){
+            dropdown.classList.toggle("visible");
+        }
+
+    </script>
+</body> 
+</html>

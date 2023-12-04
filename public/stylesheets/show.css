@@ -1,0 +1,425 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik';
+}
+
+.visible{
+    display: block !important;
+}
+
+#dropdown{
+    display: none;
+}
+
+
+
+
+.content{
+    width: 90%;
+    overflow: hidden;
+    display: flex;
+    margin: auto;  
+    margin-top: 30px;  
+}
+
+.campname{
+    font-size: 30px;
+    font-weight: 400;
+    color: #222222;
+}
+
+.info{
+    margin-top: 15px;
+}
+
+.info .starico{
+    width: 10px;
+}
+
+.info h5{
+    font-weight: 500;
+}
+
+.lnk{
+    color: black; 
+    text-decoration: 1px underline;
+}
+
+.mainimg{
+    margin-top: 20px;
+    position: relative;
+}
+.img{
+    width: 1000px;
+    height: 670px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.btn-download{
+    outline: none;
+    background: white;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 12px;
+    padding: 9px 21px;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    position: absolute;
+    top: 91%;
+    left: 85%;
+    text-decoration: none;
+}
+
+.name{
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.campinfo{
+    margin-top: 35px;
+}
+
+.cinfo{
+    margin-top: -5px;
+    border-bottom: 1px solid #dddddd;
+    padding-bottom: 25px;
+}
+
+.heh{
+    font-weight: 300;
+    color: #717171;
+}
+
+.ownerimg{
+    width: 50px;
+    border-radius: 30px;
+}
+
+.owner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info02{
+    margin-left: 15px;
+}
+
+.locationico , .pawico, .calenderico{
+    margin-top: 5px;
+    width: 18px;
+}
+
+
+.topinfodiv , .midinfodiv{
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.more{
+    justify-content: space-between;
+}
+
+.locationinf{
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.dta{
+    color: #717171;
+    font-weight: lighter;
+    font-size: 14px;
+}
+
+/* iframe{
+    margin-top: 20px;
+    margin-left: 20px;
+    height: 670px;
+    width: 346px;
+    border-radius: 10px;
+    border-top-right-radius: 10px;
+} */
+
+iframe::after{
+    border-radius: 10px;
+    height: 669px;
+}
+
+.description{
+    width: 1000px;
+    border-top: 1px solid #dddddd;
+    margin-top: 25px;
+}
+
+.text{
+    margin: 25px 0;
+}
+
+.dta-01{
+    color: #717171;
+    font-weight: 100;
+}
+
+.abtpp{
+    margin-bottom: 25px;
+}
+
+.abtp{
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.dta-01{
+    color: #717171;
+}
+
+.features{
+    border-top: 1px solid #dddddd;
+    border-bottom: 1px solid #dddddd;
+    width: 1000px;
+
+}
+
+.txt{
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+.bedimg img{
+    width: 305px;
+    border-radius: 10px;
+}
+
+.somemoretxt{
+    margin-top: 10px;
+}
+
+.somemoretxt div{
+    font-size: 14px;
+    margin-bottom: 2px;
+}
+
+.somemoretxt span{
+    color: rgb(113, 113, 113);
+    font-weight: lighter;
+    font-size: 14px;
+}
+
+.form{
+    margin-top: 40px;
+    margin-left: 20px;
+    width: 345px;
+    border: 1px solid #dddddd;
+    box-shadow:  0 0 16px #dddddd;
+    border-radius: 10px;
+}
+
+.formop{
+    margin: 25px;
+}
+
+.pew{
+    margin-top: 9px;
+    margin-left: 5px;
+    font-size: 14px;
+}
+
+.ico{
+    font-size: 22px;
+}
+
+
+.formop1{
+    margin:30px;
+}
+
+.bruhinv{
+    width: 342px;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid #717171;
+    padding: 10px;
+}
+
+.inv1{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.lul{
+    border: 1px solid #717171;
+    border-radius: 10px;
+}
+
+.lul div input{
+    outline: none;
+    border: none;
+    width: 330px;
+}
+
+.lolop{
+    font-size: 15px;
+    margin-bottom: 8px;
+    margin-top: 8px;
+}
+
+.book{
+    margin-top: 10px;
+}
+
+.bookbtn{
+    outline: none;
+    width: 288px;
+    padding: 14px;
+    border-radius: 10px;
+    background-color: #dc143c;
+    color: white;
+    border: 1px solid white;
+    font-size: 16px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.speciobit{
+    font-size: 20px;
+}
+
+#snackbar{
+    left: 41% !important;
+}
+
+.damn{
+    font-size: 20px;
+}
+
+.single{
+    margin: 15px 0;
+}
+
+.eachofamen{
+    font-size: 18px;
+}
+
+.amenities{
+    border-bottom: 1px solid #dddddd;
+    width: 1000px;
+}
+
+.reviews{
+    margin: 25pxpx;
+}
+
+
+.logo, .ownerimg{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    
+}
+
+.indireview{
+    align-items: center;
+}
+
+.woops{
+    margin: 25px 0;
+}
+
+.reviewbtn{
+    padding: 7px 12px;
+    border-radius: 10px;
+    background-color: #dc143c;
+    color: white;
+    border: white;
+    outline: none;
+    cursor: pointerdd;
+}
+
+.map{
+    margin-top: 20px;
+    margin-left: 20px;
+    height: 670px;
+    width: 345px;
+    border-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.map2{
+    height: 600px;
+    width: 1366px;
+    border-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+}
+
+
+.link{
+    text-decoration: none;
+    color: #000;
+    
+}
+
+.abtpp{
+    text-align: justify;
+}
+
+
+
+.edit, .delete{
+    outline: none;
+    background: transparent;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+.delete{
+    margin-right: 5px;
+}
+
+.edit a , .delete a, .oplink{
+    text-decoration: none;
+    color: black;
+}
+
+.campctrlbtn{
+    margin-top: 20px;
+}
+
+.info03{
+    display: flex;
+
+}
+
+.edit01{
+    margin-top: 10px;
+    outline: none;
+    padding: 2px 2px;
+    margin-right: 2px;
+    border: 2px solid black;
+    background: transparent;
+    border-radius: 6px;
+    padding: 4px;
+    cursor: pointer;
+}
+
+.reservebtn{
+    display: none;
+}
+
+.pricetop{
+    display: none;
+}
+
+.inklink{
+    color: #000;
+}

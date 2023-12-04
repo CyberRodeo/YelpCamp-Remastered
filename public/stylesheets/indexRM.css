@@ -1,0 +1,504 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik';
+}
+
+.flame{
+    color: #dc143c;
+}
+
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(221, 221, 221, 0.238);
+    padding: 18px;
+    margin: 0;
+}
+
+
+.bruhdiv1{
+    display: flex !important;
+    justify-content: end!important;
+    width: 34%;
+}
+
+.bruhdiv2{
+    width: 66%;
+    display: flex;
+    justify-content: end;
+}
+
+
+.main{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    /* background-image: url("/06.jpg"); */
+    /* background-image: url('https://images.hdqwalls.com/wallpapers/camping-minimalism-4k-5w.jpg'); */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.mainavbar{
+    margin-top: 15px !important;
+    margin-bottom: 15px !important;
+    width: 90%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    justify-content: space-between;
+}
+
+
+
+
+.logo{
+    color: #dc143c;
+}
+
+.betn{
+    outline: none;
+    border-radius: 30px;
+    transition: .3s;
+    text-decoration: none;
+    border: 2px solid #dc143c;
+    /* background-color: #dc143c; */
+    color: #dc143c;
+}
+
+.betn-create{
+    padding: 15px 12px;
+    cursor: pointer;
+    font-size: 15px;
+    /* margin-left: 217px; */
+    margin-right: 5px;
+}
+
+.betn-create a{
+    text-decoration: none;
+    color: white;
+    padding: 0;
+    transition: .3s;
+}
+
+.betn-create:hover{
+    background-color: #dc143c;
+    color: #fff;
+    border-color: #dc143c;
+}
+
+
+
+.betn-opt{
+    outline: none;
+    border: 2px solid #dc143c;
+    line-height: 1;
+    border-radius: 30px;
+    padding: 15px 14px;
+    background-color: #fff;
+    color: #dc143c;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.betn-opt:hover{
+    background-color: #dc143c;
+    color: #fff;
+    border-color: #dc143c;
+}
+
+.menu01{
+    padding-right: 20px;
+}
+
+
+/* Input in the Navbar */
+
+
+
+.inp{
+    background: transparent;
+    width: 365px;
+    height: 30px;
+    outline: none;
+    padding: 5px 10px;
+    color: #dc143c;
+    border: none;
+    border-radius: 30px;
+}
+
+.inp::placeholder{
+    color: #dc143c;
+}
+
+.ico_inp{
+    /* border: 2px solid #dc143c; */
+    border-radius: 30px;
+    border: 1px solid #e7e7e7;
+    box-shadow: 0px 2px 9px 0px rgb(0 0 0 / 20%);
+    padding: 3px 3px;
+}
+
+.searchbetn{
+    border-radius: 50%;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.searchico{
+    background-color: #dc143c;
+    border-radius: 30px;
+    padding: 15px 15px;
+    transition: .5s;
+}
+
+
+
+/* navbar fixing */
+
+.logodiv{
+    flex: 1;
+}
+
+
+
+/* responsivness */
+
+@media only screen and (max-width: 600px){
+
+}
+
+@media only screen and (max-width: 720px){
+    .betn-create{
+        display: none;
+    }
+    .betn-opt{
+        display: none;
+    }
+    .logodiv{
+        display: none;
+    }
+    .inp{
+        width: 630px;
+    }
+    .mainavbar{
+        margin-bottom: -2px !important;
+        justify-content: center !important;
+        width: 100%;
+
+    }
+    .card{
+        width: 324px;
+    }
+    
+}
+@media only screen and (max-width: 690px){
+    .inp{
+        width: 270px;
+    }
+    .card{
+        width: 330px;
+    }
+}
+
+@media only screen and (min-width: 768px){
+    .inp{
+        width: 270px;
+    }
+
+}
+
+@media only screen and (min-width: 992px){
+    .inp{
+        width: 390px;
+    }
+
+}
+
+.bcah{
+    margin-top: 15px !important;
+}
+
+@media only screen and (min-width: 1200px){}
+
+/*  */
+
+
+.cus{
+    width: 330px;
+    height: 330px;
+    margin-bottom: 80px !important;
+    border: none !important;    
+}
+
+.cus img{
+    border-radius: 12px;
+    width: 330px;
+    height: 325px;
+}
+
+div.card{
+    margin-bottom: 15px !important;
+    margin-top: 15px !important;
+}
+
+.mt-4{
+    margin-top: 35px;
+}
+
+.title{
+    display: flex;
+    justify-content: space-between;
+}
+
+#dropdown{
+    display: none;
+}
+
+.dropdown-content {
+    /* display: none; */
+    position: absolute;
+    margin-top: 10px;
+    right: 5%;
+    background-color: #f1f1f1;
+    width: 210px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 10px;
+}
+
+.op{
+    border-radius: 0px !important;
+}
+
+.nub1{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.nub{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: .2s;
+}
+
+.dropdown-content a:hover  {
+    background-color: #dc143c;
+    color: white;
+}
+
+.show {
+    display: block;
+}
+
+
+.fa-red{
+    color: #dc143c;
+}
+
+
+.view{
+    outline: none;
+    color: white;
+    background-color: transparent;
+    /* padding: 2px 6px; */
+    border: none;
+}
+
+
+.abtn{
+    color: black;
+    text-decoration: none;
+}
+
+#preloader{
+    background: #000 url("https://cdn.dribbble.com/users/2483886/screenshots/6610693/___.gif") no-repeat center ;
+    background-size: 20%;
+    height: 100vh;
+    width: 100%;
+    /* position: fixed; */
+    z-index: 100;
+    transition: .5s;
+}
+
+
+#snackbar{
+    visibility: hidden;
+    min-width: 250px;
+    color: white;
+    margin-left: -125px;
+    background-color: #dc143c;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px 20px;
+    position: fixed;
+    z-index: 2;
+    left: 50%;
+    bottom: 30px;
+}
+
+
+.show{
+    visibility: visible !important;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s !important;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s !important;
+
+}
+
+.show1{
+    display: block;
+}
+
+@-webkit-keyframes fadein{
+    from{
+        bottom:0; opacity: 0;
+    }
+    to{
+        bottom: 30px; opacity: 1;
+    }
+}
+
+
+@keyframes fadein{
+    from{
+        bottom:0; opacity: 0;
+    }
+    to{
+        bottom: 30px; opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
+  
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
+  
+
+  .visible{
+    display: block !important;
+}
+
+
+.logo , .ownerimg{
+    border: 2px solid #dc143c;
+    padding: 2px;
+    width: 50px;
+    object-fit: cover;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.link{
+    text-decoration: none;
+    color: black;
+}
+.whitelink{
+    text-decoration: none;
+    color: #fff;
+}
+
+
+.alert{
+     width: 89%;
+     display: flex;
+     border: 1px solid green;
+     justify-content: center;
+     align-items: center;
+     padding: 15px;
+     border-radius: 15px;
+     color: rgb(2, 109, 2);
+     background-color: rgba(0, 128, 0, 0.235);
+}
+
+.alert1{
+     width: 89%;
+     display: flex;
+     border: 1px solid #dc143c;
+     justify-content: center;
+     align-items: center;
+     padding: 15px;
+     border-radius: 15px;
+     color: #dc143c;
+     background-color: #ff385d42;
+     animation: bganime 2s linear infinite;
+     transition: .3s;
+}
+
+.card{
+    transition: .3s;
+}
+
+
+.card:Hover{
+    transform: scale(1.02);
+}
+
+.card-img-top{
+    object-fit: cover;
+}
+
+#opt-bottom{
+    visibility: hidden;
+    width: 425px;
+    color: white;
+    background-color: #fff;
+    border-top: 1px solid #e7e7e7;
+    text-align: center;
+    padding: 10px 20px;
+    position: fixed;
+    z-index: 2;
+    bottom: 0px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    height: 70px;
+    padding-top: 6px !important;
+}
+
+.btn-bottom{
+    margin: 0px 10px;
+    width: 5    0px;
+    padding: 6px 10px;
+    background-color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 15px;
+}
+
+.abtn-bottom{
+    color: #000000;
+    font-size: 20px;
+
+}
+
+.opt-crate{
+    margin: 0px 10px;   
+    height: 40px; 
+    display: flex;
+    flex-direction: column;
+}
+
+.bottom-txt{
+    color: #000;
+    font-size: 12px;
+    margin-bottom: 2px;
+}

@@ -1,0 +1,189 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.main{
+    display: flex;
+    top: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.img{
+    width: 1000px;
+}
+
+.img{
+    width: 50%;
+}
+
+
+
+.main03{
+    justify-content: center;
+    width: 80%;
+    height: 80vh;
+    display: flex;
+    /* box-shadow: 0 0 5px  #a8a7a7; */
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.h1con{
+    color: rgb(0, 0, 0);
+    font-size: 50px;
+    font-weight: inherit;
+    font-weight: 1000;
+} 
+
+.content03{
+    background-color: rgb(255, 255, 255) !important;
+    width: 50% !important;
+    display: flex !important;
+    /* background-color: rgb(254, 252, 248); */
+    align-items: center !important;
+    justify-content: center !important;
+    flex-direction: column !important;
+    text-align: center !important;
+}
+
+.img{
+    /* background-image: url("https://wallpaperaccess.com/full/5827.jpg"); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#myvideo {
+    width: 640px;
+    height: 585px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    object-fit: cover;
+  }
+
+.bgvideo{
+    width: 640px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height: 600px;
+}
+
+.h5con{
+    color: #000;
+    font-weight: 600;
+    font-size: 16px;
+
+}
+
+.msg{
+    margin: 10px;
+}
+
+.h5con1{
+    color: #cac9c9;
+    font-weight: 200;
+    font-size: 15px;
+}
+
+.fa-green{
+    color: rgb(29, 160, 29);
+}
+
+.blackbtn{
+    outline: none;
+    padding: 15px 25px;
+    background-color: #fff;
+    color: black;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.abtn{
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.form, .formop{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-top: 30px !important;
+}
+
+.lul{
+    margin-top: 10px;
+    border: 1px solid #717171;
+    border-radius: 10px;
+}
+
+.bruhinv{
+    width: 300px;
+    height: 50px;
+    border-radius: 10px;
+    /* border: 1px solid #717171 !important; */
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+
+.inv1{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.submitbtn{
+    margin-top: 10px;
+    outline: none;
+    padding: 12px 20px;
+    width: 300px;
+    border-radius: 10px;
+    border: 2px solid #ff385c;
+    background-color: #ff385c;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.submitbtn:hover{
+    color: #ff385c;
+    background-color: #fff;
+}
+
+.backlink{
+    margin-top: 10px;
+    text-decoration: underline;
+}
+
+.h4con{
+    font-size: 18px;
+    font-weight: 600;
+    animation: colorswitch 1s linear infinite;
+}
+
+.loggedque{
+    margin-top: 15px;
+}
+
+@keyframes colorswitch{
+    0% {
+        color: red;
+    }
+    25% {
+        color: rgb(255, 144, 60);
+    }
+    50% {
+        color: rgb(174, 255, 0);
+    }
+    100% {
+        color: green;
+    }
+}

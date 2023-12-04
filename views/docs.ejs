@@ -1,0 +1,104 @@
+<%- include ("./partials/header") %>
+
+<div class="container">
+    <div class="jumbotron about-jumbo">
+        <h1 class="text"><i class="fas fa-campground"></i> Documentaion</h1>
+        <p class="text">Welcome to 
+            <span class="text">
+                <strong>
+                    YelpCamp's
+                </strong>
+            </span> 
+            Docs and service page.
+            Here you will know about how
+            <strong class="text">
+                YelpCamp
+            </strong>
+            works.
+        </p>
+    </div>
+    <div class="text">
+        <h4>What is YelpCamp?</h4>
+        <p><strong>YelpCamp</strong> is a Dynamic Website made for Travelling and Camping suggestions!</p>
+        <h4>What are the Resources used in this project?</h4> 
+         <p>Languages used in this project :</p>
+        <ol>
+            <li>html 5</li>
+            <li>Css 3</li>
+            <li>Javascript</li>
+            <li>NodeJs</li>
+        </ol>
+        <p>Framework used :</p>
+        <ol>
+            <li>Express.Js</li>
+            <li>bootstrap 4,5</li>
+            <li>Font-Awesome</li>
+        </ol>
+        <p>Packages Used :</p>
+        <ol>
+            <li>Ejs(Embedded Javascript)</li>
+            <li>Passport</li>
+            <li>Passport-local</li>
+            <li>Passport-local-mongoose</li>
+            <li>Body-parser</li>
+            <li>Connect-flash</li>
+            <li>Method-override</li>
+            <li>Express-session</li>
+        </ol>
+        <p>Database Used :</p>
+        <ol>
+            <li>MongoDB</li>
+        </ol>
+        <p>DataBase Framework :</p>
+        <ol>
+            <li>Mongoose</li>
+        </ol>
+        <h4>How YelpCamp's features work?</h4>
+        <ol>
+            <li>Adding Campground :</li>
+            <p>There is a Mongoose Model named "Campground" which consist of some Datatypes:</p>
+            <ul>
+                <li>Campground.name</li>
+                <p>This has a value of Campground's name submitted by the owner!</p>
+                <li>Campground.image</li>
+                <p>This Datatype has the information about Campground's image (like an Url or image location).</p>
+                <li>Campground.description</li>
+                <p>This one has the information about Campground's description.</p>
+                <li>Campground.Price</li>
+                <p>This has the information about the Campground's Price Assigned by the Owner.</p>
+                <li>Campground.Author</li>
+                <p>This one is the most important it stores the data that "Campground was submitted by?" any user.</p>
+                <li>Campground.Comments</li>
+                <p>This stores the Comments added to an individual Campground.</p>
+            </ul>
+            <p>Now what happens when an YelpCamp user adds an Campground through form it takes the data and searches for which data is suited for which datatype. for an example <strong>{ campground.image = image }</strong>.
+               then asks Mongoose to save that data into an object called "Campground" Simple?. where Campground consists of :
+               <ul>
+                <li>Campground.name</li>
+                <li>Campground.image</li>
+                <li>Campground.description</li>
+                <li>Campground.Price</li>
+                <li>Campground.Author</li>
+                <li>Campground.Comments</li>
+               </ul>
+            </p>
+            <p>Now then the page is being told to request that data from the <strong>Database</strong> and display it on that page.
+               more points are associated we this but i am telling in simple words. This is how "Adding Campground" works!
+            </p>
+            <li>Updating Campground :</li>
+            <p>Now we are talking about "Updating Campground" function. Here what happens User goes to 
+                Edit Campground page then the form is already filled with data Assigned before. Then User make changes to them and Hits the button!!  
+               after the form sends an "PUT" request to that Datatype's route and asks to update the 
+               existing data with this new Assigned data. Then after process is done it redirects the user to the page he came from and asks the page to refresh so that    
+               it can send request to the Database for sending the info about that individual Campground user is searching about and the updated data comes back. So user sees the updated data.
+            </p>
+            <li>Deleting Campground :</li>
+            <p>Here there is button associated with function "Campground.remove" when user hits it the function is told to run and the gets Deleted! So simple by reading but too much hard while</p>
+            <li>Comments :</li>
+            <p>Same as Campground......Adding.......Updating........Deleting......Removed..</p>
+            
+        </ol>
+    </div>
+</div> 
+
+<%- include ("./partials/footer") %>

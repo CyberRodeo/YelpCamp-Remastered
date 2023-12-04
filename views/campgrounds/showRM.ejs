@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= camps.name %> - Book Now!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/stylesheets/show.css">
+    <link rel="stylesheet" href="/stylesheets/indexRM.css">
+    <link rel="stylesheet" href="/stylesheets/edit.css">
+    <link rel="stylesheet" href="/stylesheets/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" href="https://a0.muscache.com/airbnb/static/logotype_favicon-21cc8e6c6a2cca43f061d2dcabdf6e58.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">    
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="preloader"></div>
+    <div class="navbar">
+        <nav class="mainavbar">
+            <div class="bruhdiv2">
+                <div class="logodiv">
+                    <i class="fa-solid fa-fire-flame-curved fa-3x flame"></i>
+                </div>
+                <div class="inpcontainer">
+                    <form action="/campgrounds" method="get" id="searchform">
+                        <div class="ico_inp">
+                            <input class="inp inp-top" name="search"  type="text" autocomplete="off" placeholder="Search Campground - Name or Location" required>
+                            <!-- <a href="/campgrounds" class="speciolink" ><i class="fa fa-search searchico"></i></a>    -->
+                            <button type="submit" class="searchbetn"><i class="fa fa-search searchico"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="bruhdiv1">
+                <div class="bcah">
+                    <% if(!currentUser){ %>
+                        <a class="betn betn-create"  href="/campgrounds/new">Become a Host</a>
+                    <% } else { %>  
+                        <a class="betn betn-create"  href="/campgrounds/new">Host Campground</a>
+                    <% } %> 
+                </div>
+                <% if(!currentUser) { %>
+                <% } else { %>
+                    <img class="logo" style="margin-right: 5px;" src="<%= currentUser.profpic %>" alt="">
+                <% } %>
+                <div class="opt" onclick="show()">
+                    <button class="betn-opt dropbtn" onclick="dropdown()">
+                        <div class="menu01"><i class="fa-solid fa-bars bars"></i></div>
+                        <div><i class="fa fa-user-circle user"></i></div>
+                    </button>
+                    <div id="dropdown"  class="dropdown-content">
+                        <a href="/" class="nub1" >Home</a>
+                        <a href="/campgrounds" class="op">Campgrounds</a>
+                        <a href="#" class="op" onclick="myFunction()">Rose</a>
+                        <% if(!currentUser){ %>
+                            <a href="/register" class="op" >Sign Up</a>
+                            <a href="/login" class="nub">Login</a>
+                        <% } else { %>    
+                            <a href="#" class="op" ><%= currentUser.username %>'s Profile</a>
+                            <a href="/logout" class="nub">Logout</a>
+                        <% } %>
+      
+                    </div>
+                </div>
+        </nav>
+    </div>
+    <div style="width: 100%; display: flex; justify-content: center;">
+        <% if(success && success.length > 0){ %>
+            <div class="alert">
+                <div class="mainalert">
+                    <%= success %>
+                </div>
+            </div>
+        <% } %>
+        <% if(error && error.length > 0){ %>
+            <div class="alert1">
+                <div class="mainalert">
+                    <%= error %>
+                </div>
+            </div>
+        <% } %>
+    </div>
+    <div class="content">
+        <section class="head">
+            <div class="name" style="width: 1000px;">
+                <h2 class="campname"><%= camps.name%></h2>
+            </div>
+            <div class="info">
+                <div class="more" style="display: flex; width: 1000px;">
+                    <span class="inf-1">4.5 <i class="fa-solid fa-star starico"></i></span>
+                    <a class="inklink" href="https://www.google.com/search?q=<%= camps.name%>&rlz=1C1CHBF_enIN978IN978&oq=&aqs=chrome..69i57j69i59l2j69i60l2j69i61l2j69i60.2660j0j7&sourceid=chrome&ie=UTF-8" class="lnk" style="margin-left: 6px;"><%= camps.name %></a>
+                    <div class="pricetop" style="font-size: 16px;">
+                        $<%= camps.price%>
+                    </div>
+                </div>
+                <div class="image" style="display: flex;"> 
+                    <div class="mainimg">
+                        <img class="img img-01" src="<%= camps.img %>" alt="">
+                        <!-- <a href="/Yelp.jpg" download="camp" class="btn-download"><i class="fa-solid fa-download"></i>  Download</a> -->
+                    </div>
+                    <iframe class="map" src="https://www.google.com/maps/embed?<%= camps.map%>" width="400" height="669" style="border:0;" allowfullscreen="" loading="" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <!-- <iframe src="<%= camps.map %>" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+                </div>
+                <section class="oops" style="display: flex;">
+                    <section class="campdesc" style="display: flex;">
+                        <div class="maindiv" style="width: 1000px;">
+                         <div class="campinfo maindiv" style="width: 975px;">
+                             <div class="owner">
+                                 <h3 class="name">Campground hosted by <span><%= camps.author.username %></span></h3>
+                                 <img class="ownerimg"  src="<%= camps.author.profpic %>" alt="">
+                             </div>
+                             <div class="cinfo">
+                                 <h4 class="heh">5 Adults  .  2 Children  . 1 Pet</h4>
+                             </div>
+                         </div>
+                         <div class="campinfo2 maindiv" style="width: 975px">
+                             <div class="topinfodiv" style="display: flex;">
+                                 <h1 class="ico"><i class="fa-solid fa-location-dot locationico"></i></h1>
+                                 <div class="info02">
+                                     <h2 class="locationinf inftxt">Great Location</h2>
+                                     <div style="margin-top: 5px;">
+                                         <span class="dta">100% of the recent guests gave the location 5-star rating.</span>
+                                     </div>
+                                 </div>
+                             </div>
+                             <div class="midinfodiv" style="display: flex;">
+                                 <h1 class="ico"><i class="fa-solid fa-paw pawico"></i></h1>
+                                 <div class="info02">
+                                     <h2 class="locationinf inftxt">Furry Pets Welcome</h2>
+                                     <div style="margin-top: 5px;">
+                                         <span class="dta">Bring you pet along for the stay.</span>
+                                     </div>
+                                 </div>
+                             </div>                            
+                             <div class="lastinfodiv" style="display: flex;">
+                                 <h1 class="ico"><i class="fa-solid fa-calendar-check calenderico"></i></h1>
+                                 <div class="info02">
+                                     <h2 class="locationinf inftxt">Free Cancellation for 72 Hours.</h2>
+                                     <div style="margin-top: 5px;">
+                                         <span class="dta">We offer cancellation after 72 Hours of booking exclusively.</span>
+                                     </div>
+                                     <% if(currentUser && camps.author.id.equals(currentUser._id)) { %>
+                                        <div class="campctrlbtn">
+                                            <div class="info03">
+                                                <form id="delete-form" action="/campgrounds/<%= camps._id %>?_method=DELETE" method="post">
+                                                    <button class="delete" type="submit">Delete Campground</button>
+                                                </form>
+                                                <button class="edit"><a class="link" href="/campgrounds/<%= camps._id %>/edit">Update Campground</a></button>
+                                            </div>
+                                         </div>
+                                     <% } %>   
+                                 </div>
+                             </div>
+                         </div> 
+                         <div class="description maindiv" style="width : 975px">
+                             <div class="text">
+                                 <div class="abtpp">
+                                     <div class="abtp deschead">
+                                         About this place
+                                     </div>
+                                     <span class="dta-01 desctxt">
+                                        <%= camps.description %>
+                                     </span>
+                                 </div>
+                                 <div class="abtpp"> 
+                                     <div class="abtp deschead">
+                                         Campground
+                                     </div>
+                                     <span class="dta-01 desctxt">
+                                         The cabin is completely fitted out with a double bedroom, shower room, open plan kitchen and living room.
+                 
+                                         The decking area is just 5 metres from the water's edge. Dining area has picnic bench and pots of herbs for you to use. A second decking area stretching out in front of the French windows has a bench for seal and otter spotting.
+                 
+                                         This is traditional self-catering unit. Linens and towels are provided. Tea, coffee, cooking basics, washing up liquid and spare loo roll are provided. The cabin is always clean, comfortable and quiet with outstanding views across the loch.
+                                     </span>
+                                 </div>
+                                 <div class="abtpp">
+                                     <div class="abtp deschead">
+                                         Other things to note
+                                     </div>
+                                     <span class="dta-01 desctxt">
+                                         It's very important that guests acknowledge that the path leading from the carpark as well as the paths around the island are very rocky and slippery. Unfortunately, the island is inaccessible to those with mobility difficulties. High grip shoes are highly recommended. Paths are not lit after dark and torches are essential. The steps are steep up to the car park and require a good level of fitness.
+                                     </span>
+                                 </div>
+                             </div>
+                         </div>
+                     </section>
+                     <section class="form">
+                         <div class="formop">
+                             <div class="mainform">
+                                <div class="price" style="display: flex; align-items: center; justify-content: space-between;">
+                                    <div style="display: flex; align-items: center;">
+                                        <div style="font-size: 30px;">
+                                            $<%= camps.price%>
+                                        </div>
+                                        <div class="pew">
+                                            <small style="font-size: 16px;"> night</small>
+                                        </div>
+                                    </div>
+                                    <div class="reviewsop">
+                                        <div>
+                                            <i class="fa-solid fa-star"></i> 4.6
+                                        </div>
+                                    </div>
+                                </div>    
+                             </div>
+                         </div>
+                         <div class="formop1">
+                            <form action="">
+                                <div class="bruhs">
+                                    <h3 class="lolop">Visitor's info</h3>
+                                    <div class="lul">
+                                        <div class="inv2" >
+                                            <input class="bruhinv" type="text" placeholder="Visitor's Name">
+                                        </div>
+                                        <hr>
+                                        <div class="inv2" >
+                                            <input class="bruhinv" type="email" placeholder="Visitor's Email">
+                                        </div>
+                                        <hr>
+                                        <div class="inv2">
+                                            <input class="bruhinv" type="number" placeholder="Visitor's Age">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lulop">
+                                    <h3 class="lolop">Guests Info</h3>
+                                    <div class="lul"> 
+                                        <div class="inv2">
+                                            <input class="bruhinv" type="number" placeholder="Children">
+                                        </div>
+                                        <hr>
+                                        <div class="inv2">
+                                               <input class="bruhinv" type="number" placeholder="Guest">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lulop">
+                                    <h3 class="lolop">Food Services</h3>
+                                    <div class="lul">  
+                                        <div class="inv2">
+                                            <input class="bruhinv" type="text" placeholder="Yes / No">
+                                        </div>
+                                        <hr>
+                                        <div class="inv2">
+                                            <input class="bruhinv" type="text" placeholder="Type of Food">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="book">
+                                <button class="bookbtn" onclick="myFunction()">Reserve</button>
+                            </div>
+                            <div class="ending" style="margin-top: 10px; display: flex; justify-content: center;">
+                                <div>
+                                    <small>You won't be charged yet.</small>
+                                </div>
+                            </div>
+                            <div class="ending" style="margin-top: 10px; display: flex; justify-content: center;">
+                                <div>
+                                    <hr style="width: 330px; margin-top: 10px;">
+                                </div>
+                            </div>
+                            <div class="ending" style="margin-top: 30px; display: flex; justify-content: space-between;">
+                                    <small class="speciobit"> Total before Taxes </small>
+                                    <small class="speciobit" style="color: rgb(18, 142, 18);"> + $<%= camps.price%></small>
+                            </div>
+                            
+                         </div>
+                     </section>
+                </section>
+                <div class="features">
+                    <div class="text">
+                        <div class="abtpp">
+                            <div class="txt">
+                                Where you'll sleep
+                            </div>
+                            <div class="bedimg">
+                                <img class="bedimg" src="https://images.furnituredealer.net/img/products/coaster/color/fenbrook%20300523--181734809_300523ke-b1.jpg" alt="">
+                            </div>
+                            <div class="somemoretxt">
+                                <div class="bed">Bedroom</div>
+                                <span class="bed1"> 1 double bed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="amenities">
+                    <div class="text">
+                        <div class="abtpp">
+                            <div class="txt">
+                                What this place offers
+                            </div>
+                        </div>
+                        <div class="mainamen" style="width: 600px ;">
+                           <div style="display: flex;">
+                                <div class="eachofamen" style="display: flex; width: 50%; margin-bottom: 15px; margin-right: 20px;">
+                                    <div style="margin-right: 10px;"><i class="fa-solid fa-wifi"></i></div>
+                                    <div>Wifi</div>
+                                </div>
+                                <div class="eachofamen" style="display: flex; width: 50%; margin-bottom: 15px; margin-right: 20px;">
+                                    <div style="margin-right: 10px;"><i class="fa-solid fa-swimming-pool"></i></div>
+                                    <div>Pool</div>
+                                </div>
+                           </div>
+                           <div style="display: flex;">
+                                <div class="eachofamen" style="display: flex; width: 50%; margin-bottom: 15px; margin-right: 20px;">
+                                    <div style="margin-right: 10px;"><i class="fa-solid fa-television"></i></div>
+                                    <div>TV</div>
+                                </div>
+                                <div class="eachofamen" style="display: flex; width: 50%; margin-bottom: 15px; margin-right: 20px;">
+                                    <div style="margin-right: 10px;"><i class="fa-solid fa-temperature-3"></i></div>
+                                    <div>Heating</div>
+                                </div>
+                           </div>
+                           <div style="display: flex;">
+                                <div class="eachofamen" style="display: flex; width: 50%; margin-bottom: 15px; margin-right: 20px;">
+                                    <div style="margin-right: 10px;"><i class="fa-solid fa-kitchen-set"></i></div>
+                                    <div>kitchen</div>
+                                </div>
+                                <div class="eachofamen" style="display: flex; width: 50%; margin-bottom: 15px; margin-right: 20px;">
+                                    <div style="margin-right: 10px;"><i class="fa-solid fa-bowl-food"></i></div>
+                                    <div>Food</div>
+                                </div>
+                           </div>
+                           <div style="display: flex;">
+                                <div class="eachofamen" style="display: flex; width: 50%; margin-bottom: 15px; margin-right: 20px;">
+                                    <div style="margin-right: 10px;"><i class="fa-solid fa-snowflake"></i></div>
+                                    <div>Air Conditioning</div>
+                                </div>
+                                <div class="eachofamen" style="display: flex; width: 50%; margin-bottom: 15px; margin-right: 20px;">
+                                    <div style="margin-right: 10px;"><i class="fa-solid fa-paw"></i></div>
+                                    <div>Pets</div>
+                                </div>
+                           </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="reservebtn">
+                    <button class="bookbtn">Reserve</button>
+                </div>
+                <div class="reviews" style="width: 1000px; border-bottom: 1px solid #dddddd;">
+                    <div class="abtpp">
+                        <div class="txt">
+                            Reviews
+                        </div>
+                    </div>
+                    <div class="reviewsmain">
+                        <% camps.comments.forEach(function(comment){ %>
+                            <div class="woops">
+                                <div class="indireview" style="display: flex;">
+                                    <img class="logo" src="<%= comment.author.profpic %>" alt="">
+                                    <div class="commname" style="margin-left: 10px; font-weight: bold; font-size: 18px;">
+                                        <%= comment.author.username %>
+                                    </div>
+                                </div>
+                                <div class="thought" style="margin-top: 10px;">
+                                        <%= comment.text %>
+                                </div>
+                                <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
+                                    <div class="ctrlbtns" style="display: flex;">
+                                        <button style="margin-right: 5px;" class="edit01"><a class="link"  href="/campgrounds/<%= camps._id %>/comments/<%= comment._id %>/edit">Edit Review</a></button>
+                                        <form action="/campgrounds/<%= camps._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+                                            <button class="edit01">Delete Comment</button>
+                                        </form>
+                                    </div>
+                                <% } %>              
+                            </div>
+                        <% }) %>
+                        <div style="margin-bottom: 25px;">
+                            <button class="reviewbtn"><a class="whitelink" href="/campgrounds/<%= camps._id %>/comments/new">Add Review</a></button>
+                        </div>
+                    </div>  
+                </div>
+                <div class="bigmap" style=" width: 1400px;">
+                    <div>
+                        <div class="abtpp">
+                            <div class="txt">
+                                Where you'll be
+                            </div>
+                        </div>
+                        <iframe class="map2"  src="https://www.google.com/maps/embed?<%= camps.map%>" width="400" height="669" style="border:0;" allowfullscreen="" loading="" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <!-- <iframe class="map" src="https://www.youtube.com/embed/60ItHLz5WEA" title="Alan Walker - Faded" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                    </div>
+                </div>
+                <div class="footer" style="background-color: white !important;">
+                    <a class="link" href="/">YelpCamp&#169;2023</a>
+                </div>
+                
+        </section>
+        
+    </section>
+    
+
+    <div id="snackbar">
+        You will recieve and Email from YelpCamp Soon, Checkout executed. 😁
+    </div>
+    </div>
+    <script>
+        var loader = document.getElementById("preloader");
+
+        window.addEventListener("load", function(){
+            loader.style.display = 'none';
+        }); 
+    
+        var dropdown = document.getElementById("dropdown");
+
+        function show(){
+            dropdown.classList.toggle("visible");
+
+
+        }
+        
+        function myFunction() {
+             var x = document.getElementById("snackbar");
+             x.className = "show";
+             setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+        }
+
+
+        
+    </script>
+</body>
+</html>

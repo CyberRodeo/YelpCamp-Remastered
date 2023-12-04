@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins';
+}
+
+#preloader{
+    background: #000 url("https://cdn.dribbble.com/users/2483886/screenshots/6610693/___.gif") no-repeat center ;
+    background-size: 20%;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    transition: .5s;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    background-image: url("/01.jpg");
+}
+
+.view{
+    outline: none;
+    background: transparent;
+    
+}

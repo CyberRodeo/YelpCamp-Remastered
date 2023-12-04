@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YelpCamp : Find Best Camps!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/stylesheets/landingRM.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" href="https://a0.muscache.com/airbnb/static/logotype_favicon-21cc8e6c6a2cca43f061d2dcabdf6e58.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">    
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/responsive.css">
+</head>
+<body>
+    <div id="preloader"></div>
+    <div class="container">
+       <div class="navbar">
+           <!-- <img src="/logo.svg" class="logo" alt=""> -->
+           <i class="fa-solid fa-fire-flame-curved fa-3x flame"></i>
+           <% if(!currentUser) { %>
+                <a href="/register" class="signupbtn">Sign Up</a>
+            <% } else { %>
+               
+                    <img class="ownerimg" onclick="showbruh()" src="<%= currentUser.profpic %>" alt="">
+
+            <% } %>
+            <div id="dropdown"  class="dropdown-content">
+                <a href="/" class="nub1" >Home</a>
+                <a href="/campgrounds" class="op">Campgrounds</a>
+                <a href="#" class="op" onclick="myFunction()">Rose</a>
+                <% if(!currentUser){ %>
+                    <a href="/register" class="op" >Sign Up</a>
+                    <a href="/login" class="nub">Login</a>
+                <% } else { %>    
+                    <a href="#" class="op" ><%= currentUser.username %>'s Profile</a>
+                    <a href="/logout" class="nub">Logout</a>
+                <% } %>
+
+            </div>
+           
+       </div>
+      
+       <div class="main"> 
+           <div class="center">
+                <small>Welcome to,</small>
+                <h1 class="specioh1">YelpCamp</h1>
+                <small>Here you will find the best campgrounds around the world.</small>
+                <div class="inpcontainer">
+                    <form action="/campgrounds" method="get" id="searchform">
+                        <input class="inp" name="search" autocomplete="off"  type="text" placeholder="Search Campground - Category, Name or Location" required>
+                        <!-- <a href="/campgrounds" class="speciolink" ><i class="fa fa-search searchico"></i></a>    -->
+                        <button type="submit" class="speciobtn"><i class="fa fa-search searchico"></i></button>
+                    </form>
+                </div>
+           </div>
+       </div>
+    </div>
+    <div class="main03">
+        <div class="content03">
+            <h2 class="h1con">Explore the best <br> camps on Earth.</h1>
+                <h5 class="h5con">
+                    YelpCamp has a curated list of the best camping spots on 
+                    <br>
+                    Earth. Unfiltered and unbiased reviews.                
+                </h5>
+                <div class="start" style="text-align: start; display: flex; flex-direction: column; justify-content: start; margin-top: 15px; line-height: 35px;">
+                    <h5 class="h5con1"><i class="fa-solid fa-circle-check fa-green"></i> Add your own camp suggestions.</h5>
+                    <h5 class="h5con1"><i class="fa-solid fa-circle-check fa-green"></i> Leave reviews and Experiences.</h5>
+                    <h5 class="h5con1"><i class="fa-solid fa-circle-check fa-green"></i> See location for all camps.</h5>
+                </div>
+                <button class="blackbtn">
+                    <a class="abtn" href="/campgrounds">View Campgrounds</a>
+                </button>
+                
+        </div>
+        <div class="img kekw">
+
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container02">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>YelpCamp</h4>
+                    <ul>
+                        <li><a href="">About Us</a></li>
+                        <li><a href="/test">Our Services</a></li>
+                        <li><a href="">Privacy Policy</a></li>
+                        <li><a href="/login">Sign In</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Help</h4>
+                    <ul>
+                        <li><a href="/test">FAQ</a></li>
+                        <li><a href="">Watch</a></li>
+                        <li><a href="">Blogs</a></li>
+                        <li><a href="/campgrounds">Camps</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/login">Login</a></li>
+                        <li><a href="/register">Sign Up</a></li>
+                        <li><a href="/campgrounds">View Camps</a></li>
+                    </ul>                                        
+                </div>
+                <div class="footer-col">
+                    <h4>Follow</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f specio-link"></i></a>
+                        <a href="https://www.twitter.com"><i class="fa-brands fa-twitter specio-link"></i></a>
+                        <a href="https://www.instagram.com"><i class="fa-brands fa-instagram specio-link"></i></a>
+                        <a href="https://www.linkedin.com"><i class="fa-brands fa-linkedin specio-link"></i></a> 
+                    </div>                                             
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        var loader = document.getElementById("preloader");
+
+
+        window.addEventListener("load", function(){
+            loader.style.display = "none";
+        });
+
+        var dropdown = document.getElementById("dropdown");
+
+        function showbruh(){
+            dropdown.classList.toggle("visible");
+
+
+        }
+    </script>
+</body>
+</html>

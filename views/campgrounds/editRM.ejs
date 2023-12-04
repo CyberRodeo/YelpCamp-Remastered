@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Campground</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/stylesheets/show.css">
+    <link rel="stylesheet" href="/stylesheets/indexRM.css">
+    <link rel="stylesheet" href="/stylesheets/edit.css">
+    <link rel="stylesheet" href="/stylesheets/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" href="https://a0.muscache.com/airbnb/static/logotype_favicon-21cc8e6c6a2cca43f061d2dcabdf6e58.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">    
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="preloader"></div>
+    <div class="navbar">
+        <nav class="mainavbar">
+            <div class="bruhdiv2">
+                <div class="logodiv">
+                    <i class="fa-solid fa-fire-flame-curved fa-3x flame"></i>
+                </div>
+                <div class="inpcontainer">
+                    <form action="/campgrounds" method="get" id="searchform">
+                        <div class="ico_inp">
+                            <input class="inp" name="search"  type="text" autocomplete="off" placeholder="Search Campground - Name or Location" required>
+                            <!-- <a href="/campgrounds" class="speciolink" ><i class="fa fa-search searchico"></i></a>    -->
+                            <button type="submit" class="searchbetn"><i class="fa fa-search searchico"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="bruhdiv1">
+                <div class="bcah">
+                    <% if(!currentUser){ %>
+                        <a class="betn betn-create"  href="/campgrounds/new">Become a Host</a>
+                    <% } else { %>  
+                        <a class="betn betn-create"  href="/campgrounds/new">Host Campground</a>
+                    <% } %> 
+                </div> 
+                <% if(!currentUser) { %>
+                <% } else { %>
+                    <img class="logo" style="margin-right: 5px;" src="<%= currentUser.profpic %>" alt="">
+                <% } %>
+                <div class="opt" onclick="show()">
+                    <button class="betn-opt dropbtn" onclick="dropdown()">
+                        <div class="menu01"><i class="fa-solid fa-bars bars"></i></div>
+                        <div><i class="fa fa-user-circle user"></i></div>
+                    </button>
+                    <div id="dropdown"  class="dropdown-content">
+                        <a href="/" class="nub1" >Home</a>
+                        <a href="/campgrounds" class="op">Campgrounds</a>
+                        <a href="#" class="op" onclick="myFunction()">Rose</a>
+                        <% if(!currentUser){ %>
+                            <a href="/register" class="op" >Sign Up</a>
+                            <a href="/login" class="nub">Login</a>
+                        <% } else { %>    
+                            <a href="#" class="op" ><%= currentUser.username %>'s Profile</a>
+                            <a href="/logout" class="nub">Logout</a>
+                        <% } %>
+      
+                    </div>
+                </div>
+            </nav>
+            </div>
+    </div>
+    <div style="width: 100%; display: flex; justify-content: center;">
+        <% if(success && success.length > 0){ %>
+            <div class="alert">
+                <div class="mainalert">
+                    <%= success %>
+                </div>
+            </div>
+        <% } %>
+        <% if(error && error.length > 0){ %>
+            <div class="alert1">
+                <div class="mainalert">
+                    <%= error %>
+                </div>
+            </div>
+        <% } %>
+    </div>
+    <div class="formop">
+        <div class="main03">
+            <div class="content03">
+                <h2 class="h1con">Edit Campground:</h1>
+                    <h3  style="margin: 10px; font-size: 25px;"><%= campground.name %></h3>
+                    <form action="/campgrounds/<%= campground._id %>/?_method=PUT" method="post" enctype="multipart/form-data">
+                        <div class="lul"> 
+                            <div class="inv2">
+                                <input class="bruhinv" type="text" value="<%= campground.name %>" name="name" placeholder="Campground Name">
+                            </div>
+                            <hr>
+                            <div class="inv2">
+                                <input class="bruhinv" type="number" value="<%= campground.price %>" name="price" placeholder="Price" min="0">
+                            </div>
+                            <hr>
+                            <div class="inv2">
+                                <input class="bruhinv" type="text" name="map" value="<%= campground.map %>" placeholder="Map Link">
+                            </div>
+                            <hr>
+                            <div class="inv2">
+                                <input class="bruhinv file-inp" onchange="showPreview(event);" type="file" name="image" accept="image/*" placeholder="Image">
+                            </div>
+                            <hr>
+                            <div class="inv2">
+                                <!-- <input class="bruhinv" type="text" name="password"  placeholder="Description"> -->
+                                <input placeholder="Campground Description......" id="bropo"  class="bruhinv" name="description" value="<%= campground.description %>" rows="5" cols="50"></input>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="submitbtn" type="submit">Edit</button>
+                        </div>
+                    </form>               
+                    <div class="backlink">
+                        <a  onclick="backpage()" class="link" href="#">Go Back</a>
+                    </div>                  
+            </div>
+            <div class="img1">
+                <img onerror="this.style.display='none'" class="coverimg" id="file-ip-1-preview" src="<%= campground.img %>" alt="">
+            </div>
+        </div>
+    </div>
+    
+    <div id="snackbar">
+        You will recieve and Email from YelpCamp Soon, Checkout executed. 😁
+    </div>
+    </div>
+    <script>
+        var loader = document.getElementById("preloader");
+
+        window.addEventListener("load", function(){
+            loader.style.display = 'none';
+        }); 
+    
+        var dropdown = document.getElementById("dropdown");
+
+        function show(){
+            dropdown.classList.toggle("visible");
+
+
+        }
+        
+        function myFunction() {
+             var x = document.getElementById("snackbar");
+             x.className = "show";
+             setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+        }
+
+        function showPreview(event){
+            if(event.target.files.length > 0){
+                var src = URL.createObjectURL(event.target.files[0]);
+                var preview = document.getElementById("file-ip-1-preview");
+                preview.src = src;
+                preview.style.display = "block";
+            };
+        };
+
+      
+
+    </script>
+</body>
+</html>

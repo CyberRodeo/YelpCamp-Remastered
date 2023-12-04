@@ -1,0 +1,445 @@
+@media screen and (max-width: 1024px) {
+    .h1con{
+        font-size: 45px !important;
+    }
+    .h5con{
+        font-size: 13px !important;
+    }
+    .h5con1{
+        font-size: 13px !important;
+    }
+
+    .blackbtn{
+        padding: 13px 20px !important;
+    }
+    .specioh1{
+        font-size: 115px;
+    }
+    .row{
+        width: 1024px;
+        margin: 0 15px;
+    }
+    .text, .mainamen, .reviews, .info, .maindiv, .map2, .features, .img-01, .campname, .more{
+    width: 921px !important;
+    }
+    .inklink{
+        display: none !important;
+    }
+    .pricetop{
+        display: block !important;
+    }
+    .form{
+        /* display: none !important; */
+    }
+    .map{
+        display: none !important;
+    }
+    .pricetop, .inf-1{
+        font-size: 20px !important;
+    }
+    .name, .txt{
+        font-size: 25px !important;
+    }
+    .inftxt{
+        font-size: 20px;
+    }
+    .dta{
+        font-size: 18px;
+    }
+    .deschead{
+        font-size: 20px !important;
+    }
+    .bed{
+        font-size: 20px !important;
+    }
+    .bed1{
+        font-size: 18px !important;
+    }
+    .reviewbtn{
+        padding: 15px 25px !important;
+    }
+    #myvideo{
+        display: none !important;
+    }
+    .impop{
+        display: none !important;
+    }
+}  
+
+@media screen and (max-width: 768px) {
+    .row{
+        width: 100% !important;
+    }
+    div.footer-col ul li a{
+        font-size: 13px !important;
+    }
+
+    .footer-col .social-links a{
+        font-size: 13px !important;
+        width: 35px;
+        height: 35px;
+    }
+    .h1con{
+        font-size: 42px !important;
+    }
+    .h5con{
+        font-size: 16px !important;
+        text-align: center;
+        width: 350px;
+        margin: 13px 0;
+
+    }
+    .bruhdiv2{
+        width: 58%;
+    }
+    .bruhdiv1{
+        width: 45%;
+    }
+    .start{
+        text-align: center;
+    }
+    .blackbtn{
+        border-radius: 25px;
+    }
+    .text, .mainamen, .reviews, .info, .maindiv, .map2, .features, .img-01, .campname, .more{
+        width: 690px !important;
+    }
+    .inklink{
+        display: none !important;
+    }
+    .pricetop{
+        display: block !important;
+    }
+    .form{
+        /* display: none !important; */
+    }
+    .map{
+        display: none !important;
+    }
+    #myvideo{
+        display: none !important;
+    }
+
+    } .h5con{
+        text-align: center;
+    }
+    .impop{
+        display: none !important;
+    }
+
+
+
+@media screen and (max-width: 426px){
+    .campname{
+        font-size: 25px;
+        width: 322px;
+    }
+    .img-01{
+        display: block !important;
+        width: 380px !important;
+        height: 380px !important;
+    }
+    .row{
+        width: 435px;
+        margin: 0px 0px !important;
+    }
+    .inp{
+        width: 240px !important;
+    }
+    .content03{
+        width: 100%;
+    }
+    .h1con{
+        font-size: 40px !important;
+       }
+    .h5con{
+        font-size: 13px !important;
+        margin-top: 15px;
+    }
+    .signupbtn{
+        padding: 12px 15px;
+    }
+    .img2{
+        background-image: url('https://canvs-prod.s3-ap-southeast-1.amazonaws.com/media/artwork/b4c69fe7-0d9b-476b-9678-7b2928463c9f.gif');
+        height: 100vh;
+        width: 100%;
+        background-position: left;
+        background-size: cover;
+    }
+    .inp-top{
+        width: 278px !important;
+        caret-color: black;
+        color: #000;
+    }
+    .bruhdiv2{
+        width: 100%;
+    }
+    .bruhdiv1{
+        display: none !important;
+    }
+    #opt-bottom{
+        visibility: visible !important;
+    }
+    .se-ico-whi{
+        color: #000 !important;
+        background-color: #fff !important;
+        border: 1px solid #b7b7b7;
+    }
+    .inp-top::placeholder{
+        color: #000 !important;
+    }
+    .cont-top{
+        margin-bottom: 70px !important;
+    }
+    .image{
+        display: block !important;
+    }
+    .map{
+        display: none;
+    }
+    .text, .mainamen, .reviews, .info, .maindiv, .map2, .features{
+        width: 380px !important;
+    }
+    .inp-top{
+        width: 330px !important;
+    }
+    .bruhdiv2{
+        width: 91% !important;
+    }
+    .ownerimg, .logo{
+        width: 45px !important;
+        height: 45px !important ;
+    }
+    .form{
+        /* display: none !important; */
+    }
+    .map{
+        display: none !important;
+    }
+    .backlink{
+        width: 300px !important;
+    }
+    .impop{
+        display: none !important;
+    }
+    .kekw{
+        display: none !important;
+    }
+ 
+
+@media screen and (max-width:376px){
+    .specioh1{
+        font-size: 70px !important;
+
+    }
+    .footer-col{
+        padding: 0 8px;
+    }
+    .h1con{
+        font-size: 36px !important;
+    }
+    .h5con{
+        font-size: 10px !important;
+    }
+    .h5con1{
+        font-size: 12.5px !important;
+    }
+    .bruhdiv2{
+        width: 90% !important;
+    }
+    #opt-bottom{
+        width: 369px !important;
+        padding: 6px 0px !important;
+    }
+    .more{
+        width: 333px !important;
+    }
+    .inklink{
+        display: none !important;
+    }
+    .pricetop{
+        display: block !important;
+    }
+    .img-01{
+        width: 333px !important;
+        height: 333px !important;
+    }
+    .owner{
+        margin-bottom: 15px !important;
+    }
+    .text, .mainamen, .reviews, .info, .maindiv, .map2, .features{
+        width: 333px !important;
+    }
+    .name{
+        font-size: 19px !important;
+    }
+    .heh{
+        font-size: 15px !important;
+    }
+    .ownerimg, .logo{
+        width: 45px !important;
+        height: 45px !important;
+    }
+    .inp-top{
+        width: 278px !important;
+    }
+    .form{
+        /* display: none !important; */
+    }
+    .map{
+        display: none !important;
+    }
+    .bruhinv, .submitbtn, .backlink{
+        width: 300px !important;
+    }
+    .h5con{
+        font-size: 11px !important;
+    }
+    .impop{
+        display: none !important;
+    }
+    .kekw{
+        display: none !important;
+    }
+}   
+
+@media screen and (max-width: 321px){
+    .specioh1{
+        font-size: 62px !important;
+    }
+    .inp{
+        width: 190px !important;
+    }
+    #preloader{
+        background-size: 140% !important;
+    }
+    .inp-top{
+        width: 231px !important;
+    }
+    .cus, .card-img-top{
+        width: 300px !important;
+        height: 300px !important;
+    }
+    #opt-bottom{
+        width: 316px !important;
+    }
+    .img-01{
+        width: 288px !important;
+        height: 288px !important;
+    }
+    .campname{
+        width: 288px !important;
+        font-size: 23px !important;
+    } 
+    .camplink{
+        display: none !important;
+    }
+    .maindiv{
+        width: 288px !important;
+    }
+    .bedimg{
+        width: 288px !important;
+    }
+    .map2{
+        width: 288px !important;
+    }
+    .name{
+        font-size: 15px !important;
+        width: 75% !important;
+    }
+    .heh{
+        font-size: 11px !important;
+    }
+    .campinfo{
+        margin-top: 16px !important;
+    }
+    .owner{
+        margin-bottom: 5px;
+    }
+    .inftxt{
+        font-size: 14px !important;
+    }
+    .topinfodiv, .midinfodiv{
+        margin-top: 15px !important;
+        margin-bottom: 15px !important;
+    }
+    .ownerimg{
+        width: 40px !important;
+        height: 40px !important;
+    }
+    .deschead{
+        font-size: 15px !important;
+    }
+    .desctxt{
+        font-size: 14px !important;
+    }
+    .mainamen{
+        width: 288px !important;
+    }
+    .eachofamen{
+        font-size: 14px;        
+    }
+    .reviews{
+        width: 288px !important;
+    }
+    .footer{
+        width: 288px !important;
+    }
+    .commname{
+        font-size: 15px !important;
+    }
+    .thought{
+        font-size: 15px !important;
+    }
+    .form{
+        /* display: none !important; */
+    }
+    .reservebtn{
+        display: block !important;
+    }
+    .inklink{
+        display: none !important;
+    }
+    .more{
+        width: 288px !important;
+    }
+    .pricetop{
+        display: block !important;
+    }
+    .form{
+        /* display: none !important; */
+    }
+    .map{
+        display: none !important;
+    }
+    .dta{
+        font-size: 13px !important;
+    }
+    .text, .mainamen, .reviews, .info, .maindiv, .map2, .features, .img-01, .campname, .more{
+        width: 288px !important;
+    }
+    .txt, .bed{
+        font-size: 15px !important;
+    }
+    .bed1{
+        font-size: 14px !important;
+    }
+    /* LOGIN PAGE */
+    .bruhinv ,.backlink{
+        width: 250px !important;
+    }
+    .logo-1{
+        margin-top: 5px !important;
+    }
+    .impop{
+        display: none !important;
+    }
+    .h5con{
+        font-size:11px !important;
+    }
+    .kekw{
+        display: none !important;
+    }
+}
+
+}
