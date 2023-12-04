@@ -18,15 +18,7 @@ var commentRoutes    = require("./routes/comments"),
        
 
 mongoose.connect("mongodb://127.0.0.1:27017/yelpcamp", {useNewUrlParser: true, useUnifiedTopology: true});
-// mongoose.connect('mongodb+srv://legend:legend1234321@yelpcamp.bp884.mongodb.net/yelpcamp', {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true
-//     }).then(() => {
-//         console.log("connected to DB !!!");
-//     }).catch(err => {
-//         console.log("ERROR", err.message);
-//     });
-
+// 
 app.use(bodyParser.urlencoded({extended : true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
