@@ -30,7 +30,7 @@ app.use(flash());
 
 //passport config
 app.use(require("express-session")({ 
-    secret: "once again legend is the best",
+    secret: "secret",
     resave: false,
     saveUninitialized: false
 }));
